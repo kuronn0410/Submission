@@ -42,7 +42,10 @@ public class PlayerMovement : MonoBehaviour
         {
             speed.x -= PlayerSpeed;
         }
-
+        if (Input.GetKey(KeyCode.Space))
+        {
+            speed.y += PlayerSpeed;
+        }
         transform.Translate(speed * Time.deltaTime);
     }
 
