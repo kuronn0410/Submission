@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: ItemListEntity
   m_EditorClassIdentifier: 
   itemList:
-  - type: 3
-    sprite: {fileID: 21300000, guid: 0925c9062b9901b4199ef4c88d9c87ad, type: 3}
+  - type: 0
+    sprite: {fileID: 21300000, guid: 1d4d1fb57bc95b8428a3354ac1f8118d, type: 3}
     zoomObj: {fileID: 6442157767390799763, guid: 711cd3d76155b6549afe5e528385843d, type: 3}
   - type: 2
     sprite: {fileID: 21300000, guid: 91a302bb00f0a98479c2eed96146d669, type: 3}
