@@ -8,11 +8,11 @@ public class PlayerMovement : MonoBehaviour
     public Transform Camera;
     public float PlayerSpeed;
     public float RotationSpeed;
-
+    Vector3 startPosition;
 
     void Start()
     {
-       
+       startPosition = transform.position;
     }
 
     void Update()
@@ -20,6 +20,14 @@ public class PlayerMovement : MonoBehaviour
         move();
         RotatePlayer();
         CameraFollow();
+    }
+
+    void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Enemy"))
+        {
+            transform.position = startPosition; // プレイヤーを初期位置に戻す
+        }
     }
 
     void move()
