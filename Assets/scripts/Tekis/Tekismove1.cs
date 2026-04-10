@@ -4,18 +4,8 @@ public class Tekismove1 : MonoBehaviour
 {
 
     [SerializeField] float speed = 5f;
-    [SerializeField] float moveDistance = 10f;
+    [SerializeField] float stopPositionZ = 10f;
     [SerializeField] float nextMove = 10f;
-    [SerializeField] Vector3 moveDirection = Vector3.forward;
-
-    //(0, 0, 1) → 前（今と同じ）
-    //(1, 0, 0) → 右
-    //(-1, 0, 0) → 左
-    //(0, 0, -1) → 後ろ
-    //(1, 0, 1) → 斜め
-      
-        Vector3 targetPosition;
-
     bool isMoving = true;
     Vector3 startPosition;
 
@@ -23,8 +13,6 @@ public class Tekismove1 : MonoBehaviour
     void Start()
     {
         startPosition = transform.position;
-        targetPosition = startPosition + moveDirection.normalized * moveDistance;
-
     }
 
     // Update is called once per frame
@@ -41,8 +29,8 @@ public class Tekismove1 : MonoBehaviour
 
     void move1()
     {
-        transform.Translate(moveDirection.normalized * speed * Time.deltaTime);
-        if (Vector3.Distance(transform.position, targetPosition) < 0.1f)
+        transform.Translate(Vector3.forward * speed * Time.deltaTime);
+        if (transform.position.z >= stopPositionZ)
         {
           isMoving = false;
             Invoke("TekisReset", nextMove); // 2秒後にTekisResetメソッドを呼び出す
