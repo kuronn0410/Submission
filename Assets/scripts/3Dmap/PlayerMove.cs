@@ -60,6 +60,7 @@ public class PlayerMovement : MonoBehaviour
     void RotatePlayer()
     {
         float rotationY = 0f;
+        float rotationX = 0f;
 
         if (Input.GetKey(KeyCode.LeftArrow))
         {
@@ -69,8 +70,16 @@ public class PlayerMovement : MonoBehaviour
         {
             rotationY += RotationSpeed;
         }
+        if (Input.GetKey(KeyCode.UpArrow))
+        {
+            rotationX += RotationSpeed;
+        }
+        if (Input.GetKey(KeyCode.DownArrow))
+        {
+            rotationX -= RotationSpeed;
+        }
 
-        transform.Rotate(0f, rotationY * Time.deltaTime, 0f);  // プレイヤー自体を回転
+        transform.Rotate(rotationX * Time.deltaTime, rotationY * Time.deltaTime, 0f);  // プレイヤー自体を回転
     }
 
     void CameraFollow()
