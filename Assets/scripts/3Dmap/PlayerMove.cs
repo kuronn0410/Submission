@@ -1,92 +1,97 @@
 using UnityEngine;
-using System.Collections;
-using System.Collections.Generic;
 
 [RequireComponent(typeof(Rigidbody))]
 public class PlayerMovement : MonoBehaviour
 {
+    [Header("参照")]
     public Transform Camera;
-    public float PlayerSpeed;
-    public float RotationSpeed;
-    Vector3 startPosition;
+
+    [Header("移動")]
+    public float PlayerSpeed = 5f;
+
+    [Header("回転")]
+    public float RotationSpeed = 120f;
+    public float CameraRotationSpeed = 80f;
+
+    private Rigidbody rb;
+    private Vector3 startPosition;
+    private float cameraRotationX = 0f;
 
     void Start()
     {
-       startPosition = transform.position;
+        rb = GetComponent<Rigidbody>();
+        startPosition = transform.position;
+
+        // 物理設定（勝手に倒れないように）
+        rb.freezeRotation = true;
     }
 
     void Update()
     {
-        move();
         RotatePlayer();
         CameraFollow();
+    }
+
+    void FixedUpdate()
+    {
+        Move();
     }
 
     void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag("Enemy"))
         {
-            transform.position = startPosition; // プレイヤーを初期位置に戻す
+            rb.MovePosition(startPosition);
         }
     }
 
-    void move()
+    // ===== 移動 =====
+    void Move()
     {
-        var speed = Vector3.zero;
+        Vector3 direction = Vector3.zero;
 
-        if (Input.GetKey(KeyCode.S))
-        {
-            speed.z -= PlayerSpeed;
-        }
         if (Input.GetKey(KeyCode.W))
         {
-            speed.z += PlayerSpeed;
+            direction += transform.forward;
+            Debug.Log("W押されてる");
         }
-        if (Input.GetKey(KeyCode.D))
-        {
-            speed.x += PlayerSpeed;
-        }
-        if (Input.GetKey(KeyCode.A))
-        {
-            speed.x -= PlayerSpeed;
-        }
-        if (Input.GetKey(KeyCode.Space))
-        {
-            speed.y += PlayerSpeed;
-        }
-        transform.Translate(speed * Time.deltaTime);
+           
+        if (Input.GetKey(KeyCode.S)) direction -= transform.forward;
+        if (Input.GetKey(KeyCode.D)) direction += transform.right;
+        if (Input.GetKey(KeyCode.A)) direction -= transform.right;
+
+        Vector3 velocity = direction.normalized * PlayerSpeed;
+
+        rb.MovePosition(rb.position + velocity * Time.fixedDeltaTime);
     }
 
+    // ===== 回転 =====
     void RotatePlayer()
     {
         float rotationY = 0f;
-        float rotationX = 0f;
 
-        if (Input.GetKey(KeyCode.LeftArrow))
-        {
-            rotationY -= RotationSpeed;
-        }
-        if (Input.GetKey(KeyCode.RightArrow))
-        {
-            rotationY += RotationSpeed;
-        }
+        if (Input.GetKey(KeyCode.LeftArrow)) rotationY -= RotationSpeed;
+        if (Input.GetKey(KeyCode.RightArrow)) rotationY += RotationSpeed;
+
         if (Input.GetKey(KeyCode.UpArrow))
-        {
-            rotationX += RotationSpeed;
-        }
-        if (Input.GetKey(KeyCode.DownArrow))
-        {
-            rotationX -= RotationSpeed;
-        }
+            cameraRotationX -= CameraRotationSpeed * Time.deltaTime;
 
-        transform.Rotate(rotationX * Time.deltaTime, rotationY * Time.deltaTime, 0f);  // プレイヤー自体を回転
+        if (Input.GetKey(KeyCode.DownArrow))
+            cameraRotationX += CameraRotationSpeed * Time.deltaTime;
+
+        cameraRotationX = Mathf.Clamp(cameraRotationX, -60f, 60f);
+
+        transform.Rotate(0f, rotationY * Time.deltaTime, 0f);
     }
 
+    // ===== カメラ追従 =====
     void CameraFollow()
     {
-        Camera.position = transform.position;
-        Camera.rotation = transform.rotation;
-    }
+        if (Camera == null) return;
 
-    
+        Vector3 offset = new Vector3(0f, 2f, -5f);
+
+        Camera.position = transform.position + transform.rotation * offset;
+        Camera.rotation = Quaternion.Euler(cameraRotationX, transform.eulerAngles.y, 0f);
+    }
 }
