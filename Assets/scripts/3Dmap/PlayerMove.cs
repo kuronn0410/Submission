@@ -1,7 +1,7 @@
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody))]
-public class PlayerMovement : MonoBehaviour
+public class PlayerMove : MonoBehaviour
 {
     [Header("éQè∆")]
     public Transform Camera;
@@ -89,7 +89,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (Camera == null) return;
 
-        Vector3 offset = new Vector3(0f, 2f, -5f);
+        Vector3 offset = new Vector3(0f, 0f, 0f);
 
         Camera.position = transform.position + transform.rotation * offset;
         Camera.rotation = Quaternion.Euler(cameraRotationX, transform.eulerAngles.y, 0f);
