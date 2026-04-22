@@ -15,34 +15,4 @@ MonoBehaviour:
   itemList:
   - type: 0
     sprite: {fileID: 21300000, guid: 1d4d1fb57bc95b8428a3354ac1f8118d, type: 3}
-    zoomObj: {fileID: 6442157767390799763, guid: 711cd3d76155b6549afe5e528385843d, type: 3}
-  - type: 2
-    sprite: {fileID: 21300000, guid: 91a302bb00f0a98479c2eed96146d669, type: 3}
-    zoomObj: {fileID: 5236753837314999336, guid: 484fd1537c887f04d9643332fe268d38, type: 3}
-  - type: 4
-    sprite: {fileID: 21300000, guid: b5922220b6a6e884199fdd6e8151e900, type: 3}
-    zoomObj: {fileID: 6142993252799230350, guid: 5fb99a4b3f1e33549a3f00d7d8bc21d9, type: 3}
-  - type: 5
-    sprite: {fileID: 21300000, guid: efb1e908421156b448a9c215c9aefda7, type: 3}
-    zoomObj: {fileID: 2251541277714433056, guid: 75a6ea3f4f3cb434497cf3e66b65a013, type: 3}
-  - type: 6
-    sprite: {fileID: 21300000, guid: 8802c78c1f8ff144e831eb91c891be6c, type: 3}
-    zoomObj: {fileID: 412403852377982623, guid: b84b2daa5c820d942a57051ac0a7b647, type: 3}
-  - type: 7
-    sprite: {fileID: 21300000, guid: dd2e33170a630704da082855403fee57, type: 3}
-    zoomObj: {fileID: 483634048296378616, guid: c5067f5ef48599249bfe20b6ad8e350d, type: 3}
-  - type: 8
-    sprite: {fileID: 21300000, guid: 02a1a74b74f0e2a428394fb750e7caaa, type: 3}
-    zoomObj: {fileID: 4308812071087928052, guid: 341951670468db843ad2880a1f2e30b5, type: 3}
-  - type: 9
-    sprite: {fileID: 21300000, guid: 9c1d690ee10bcb94eb7655d6dc35d7ae, type: 3}
-    zoomObj: {fileID: 9124711282214046299, guid: 19b5ed05fc61a584f918eec059f27325, type: 3}
-  - type: 10
-    sprite: {fileID: 21300000, guid: 0415868d802839d469faefee07551eff, type: 3}
-    zoomObj: {fileID: 1191615274430842518, guid: 202208adc97eb5647803235c1c5a559a, type: 3}
-  - type: 11
-    sprite: {fileID: 21300000, guid: b3a9e55d172899942accb6cc022cbfcc, type: 3}
-    zoomObj: {fileID: 6048937650612955471, guid: df6663e9fc8c7e840ba44e55850b26ba, type: 3}
-  - type: 12
-    sprite: {fileID: 21300000, guid: 5fee91617c2c1ef48bd331f6a391c89b, type: 3}
-    zoomObj: {fileID: 1321490173450313617, guid: 5f42cff935354b1448b7211aadbe1bbb, type: 3}
+    zoomObj: {fileID: 4496320155931261074, guid: d1c0d72767eec184cb0f3552afa530e5, type: 3}
