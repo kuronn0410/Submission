@@ -13,15 +13,24 @@ public class PlayerMove : MonoBehaviour
     public float RotationSpeed = 120f;
     public float CameraRotationSpeed = 80f;
 
+    [Header("ジャンプ")]
+    [SerializeField] float jumpForce = 5f;
+    private bool isGrounded = true;
+
+    [Header("Public")]
+    public float gravityChange = 1f;
+    [SerializeField] float gravityScale = 9.81f;
+
     private Rigidbody rb;
     private Vector3 startPosition;
     private float cameraRotationX = 0f;
 
     void Start()
     {
-        rb = GetComponent<Rigidbody>();
+        
         startPosition = transform.position;
-
+        rb = GetComponent<Rigidbody>();
+        rb.useGravity = false; // カスタム重力を使用するため、Unityの重力は無効にする
         // 物理設定（勝手に倒れないように）
         rb.freezeRotation = true;
     }
@@ -30,11 +39,20 @@ public class PlayerMove : MonoBehaviour
     {
         RotatePlayer();
         CameraFollow();
+        Jump();
+
+        if(Input.GetKeyDown(KeyCode.Space))
+        {
+            GravityInversion.isActive = false;
+        }
     }
 
     void FixedUpdate()
     {
         Move();
+        float currentGravityDirection = GravityInversion.isActive ? -1f : 1f;
+        Vector3 customGravity = Vector3.down * gravityScale * currentGravityDirection;
+        rb.AddForce(customGravity, ForceMode.Acceleration);
     }
 
     void OnCollisionEnter(Collision collision)
@@ -42,6 +60,14 @@ public class PlayerMove : MonoBehaviour
         if (collision.gameObject.CompareTag("Enemy"))
         {
             rb.MovePosition(startPosition);
+        }
+        if (collision.gameObject.CompareTag("Ground"))
+        {
+            isGrounded = true;
+        }
+        if (collision.gameObject.CompareTag("InversionGround"))
+        {
+            isGrounded = true;
         }
     }
 
@@ -53,7 +79,7 @@ public class PlayerMove : MonoBehaviour
         if (Input.GetKey(KeyCode.W))
         {
             direction += transform.forward;
-            Debug.Log("W押されてる");
+            //Debug.Log("W押されてる");
         }
            
         if (Input.GetKey(KeyCode.S)) direction -= transform.forward;
@@ -93,5 +119,17 @@ public class PlayerMove : MonoBehaviour
 
         Camera.position = transform.position + transform.rotation * offset;
         Camera.rotation = Quaternion.Euler(cameraRotationX, transform.eulerAngles.y, 0f);
+    }
+
+    // ===== ジャンプ =====
+    void Jump()
+    {
+        if(Input.GetKeyDown(KeyCode.Space) && isGrounded)
+        {
+            float direction = GravityInversion.isActive ? -1f : 1f;
+            rb.AddForce(Vector3.up * jumpForce * direction, ForceMode.Impulse);
+            //Debug.Log("ジャンプ");
+            isGrounded = false;
+        }
     }
 }

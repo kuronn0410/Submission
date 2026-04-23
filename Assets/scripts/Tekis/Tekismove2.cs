@@ -12,8 +12,11 @@ public class Tekismove2 : MonoBehaviour
     private bool isAvoiding = false;
     private int savedPointerIndex = 0; // 【追加】決めた目標を覚えておくための変数
     private Transform[] waypoints;
+    private Vector3 startPosition;
+
     void Start()
     {
+       startPosition = transform.position;
        GameObject[] PointersAll = GameObject.FindGameObjectsWithTag("Pointer");
        count =PointersAll.Length;
        waypoints = new Transform[count];
@@ -126,7 +129,18 @@ public class Tekismove2 : MonoBehaviour
                bestIndex = i;
            }
         }
+
+        //Debug.Log("最も近いウェイポイントのインデックス: " + bestIndex);
         return bestIndex;
     }
 
+    void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            transform.position = startPosition;
+            // プレイヤーにダメージを与える処理をここに追加
+            Debug.Log("プレイヤーにダメージを与えました！");
+        }
+    }
 }

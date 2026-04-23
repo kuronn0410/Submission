@@ -7,6 +7,8 @@ TagManager:
   - Enemy
   - wall
   - Pointer
+  - Ground
+  - InversionGround
   layers:
   - Default
   - TransparentFX
