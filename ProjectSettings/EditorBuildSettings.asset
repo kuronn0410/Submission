@@ -6,8 +6,32 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/Title.unity
+    guid: d0ffd0078056da84eacc760d49236806
+  - enabled: 1
     path: Assets/Scenes/Main.unity
     guid: 99c9720ab356a0642a771bea13969a05
+  - enabled: 1
+    path: Assets/Scenes/Kyuukaku.unity
+    guid: 8745498c69b64ac43b47715e76f203d8
+  - enabled: 1
+    path: Assets/Scenes/Tyoukaku.unity
+    guid: e560f83e50ee97840abbd8363d99036b
+  - enabled: 1
+    path: Assets/Scenes/Syokkaku.unity
+    guid: 7a519277de58a6740b4692f9c21b4979
+  - enabled: 1
+    path: Assets/Scenes/Mikaku.unity
+    guid: c89d066f7c689a54b89017f115b21a3e
+  - enabled: 1
+    path: Assets/Scenes/WarningNote.unity
+    guid: 9e146fcf1dfa9414c9281e57318e35fd
+  - enabled: 1
+    path: Assets/Scenes/GameDescription.unity
+    guid: ed6733209068ba94fa14d76d7481d84b
+  - enabled: 1
+    path: Assets/Scenes/Clear.unity
+    guid: a8b64037f474b144d850513e73012b80
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   m_UseUCBPForAssetBundles: 0

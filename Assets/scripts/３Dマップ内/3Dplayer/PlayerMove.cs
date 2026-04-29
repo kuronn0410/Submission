@@ -94,6 +94,16 @@ public class PlayerMove : MonoBehaviour
     // ===== âÒì] =====
     void RotatePlayer()
     {
+        float mouseX = Input.GetAxis("Mouse X") * RotationSpeed;
+        float mouseY = Input.GetAxis("Mouse Y") * CameraRotationSpeed;
+        transform.Rotate(0f, mouseX * Time.deltaTime, 0f);
+
+
+        cameraRotationX -= mouseY * Time.deltaTime;
+        cameraRotationX = Mathf.Clamp(cameraRotationX, -60f, 60f);
+        Camera.localRotation = Quaternion.Euler(cameraRotationX, 0f, 0f);
+
+        /*
         float rotationY = 0f;
 
         if (Input.GetKey(KeyCode.LeftArrow)) rotationY -= RotationSpeed;
@@ -108,6 +118,7 @@ public class PlayerMove : MonoBehaviour
         cameraRotationX = Mathf.Clamp(cameraRotationX, -60f, 60f);
 
         transform.Rotate(0f, rotationY * Time.deltaTime, 0f);
+        */
     }
 
     // ===== ÉJÉÅÉâí«è] =====
