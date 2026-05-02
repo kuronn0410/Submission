@@ -6,12 +6,6 @@ public class DoorChange : MonoBehaviour
 {
     [SerializeField] string sceneName; // Raycast‚Ì‹——£
 
-    // Update is called once per frame
-    /*void Update()
-    {
-        SceneChange();
-    }*/
-
     public void SceneChange()
     {
         SceneManager.LoadScene(sceneName);

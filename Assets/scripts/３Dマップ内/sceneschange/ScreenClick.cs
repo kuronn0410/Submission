@@ -14,11 +14,16 @@ public class ScreenClick : MonoBehaviour
             if (Physics.Raycast(ray, out hit, distance))
             {
                 DoorChange door = hit.collider.GetComponent<DoorChange>();
-
+                DeleteSelf tyoukaku = hit.collider.GetComponent<DeleteSelf>();  
                 // 2. スクリプトが見つかった場合だけ実行する
                 if (door != null)
                 {
                     door.SceneChange();
+                }
+                if (tyoukaku != null)
+                {
+                    Debug.Log("敵を攻撃");
+                    tyoukaku.DeleteOBJ();
                 }
             }
         }
