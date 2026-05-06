@@ -5,9 +5,36 @@ using System.Collections;
 public class DoorChange : MonoBehaviour
 {
     [SerializeField] string sceneName; // Raycast‚Ì‹——£
+    [SerializeField] AbilityType abilitytype;
 
     public void SceneChange()
     {
-        SceneManager.LoadScene(sceneName);
+        switch(abilitytype)
+            {
+            case AbilityType.Tyoukaku:
+                TransitionHistory.Tyoukaku = true; ;
+                break;
+            case AbilityType.Mikaku:
+                TransitionHistory.Mikaku = true; ;
+                break;
+            case AbilityType.Syokkaku:
+                TransitionHistory.Syokkaku = true; ;
+                break;
+            case AbilityType.Kyuukaku:
+                TransitionHistory.Kyuukaku = true; ;
+                break;
+            case AbilityType.Shikaku:
+                TransitionHistory.Shikaku = true; ;
+                break;
+            case AbilityType.other:
+                break;
+        }
+
+
+        if (sceneName != null)
+        {
+            SceneManager.LoadScene(sceneName);
+        }
+        
     }
 }
