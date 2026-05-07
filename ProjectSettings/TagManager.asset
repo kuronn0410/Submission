@@ -9,6 +9,8 @@ TagManager:
   - Pointer
   - Ground
   - InversionGround
+  - Eye
+  - Poison
   layers:
   - Default
   - TransparentFX

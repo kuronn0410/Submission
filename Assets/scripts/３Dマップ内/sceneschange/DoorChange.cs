@@ -13,6 +13,7 @@ public class DoorChange : MonoBehaviour
             {
             case AbilityType.Tyoukaku:
                 TransitionHistory.Tyoukaku = true; ;
+                Debug.Log("Tyoukaku”\—ÍŽæ“¾");
                 break;
             case AbilityType.Mikaku:
                 TransitionHistory.Mikaku = true; ;

@@ -13,9 +13,10 @@ public class PlayerMove : MonoBehaviour
     public float RotationSpeed = 120f;
     public float CameraRotationSpeed = 80f;
 
-    [Header("ジャンプ")]
+    /*[Header("ジャンプ")]
     [SerializeField] float jumpForce = 5f;
     private bool isGrounded = true;
+    */
 
     [Header("Public")]
     public float gravityChange = 1f;
@@ -39,12 +40,9 @@ public class PlayerMove : MonoBehaviour
     {
         RotatePlayer();
         CameraFollow();
-        Jump();
+        //Jump();
 
-        if(Input.GetKeyDown(KeyCode.Space))
-        {
-            GravityInversion.isActive = false;
-        }
+        
     }
 
     void FixedUpdate()
@@ -61,13 +59,14 @@ public class PlayerMove : MonoBehaviour
         {
             rb.MovePosition(startPosition);
         }
-        if (collision.gameObject.CompareTag("Ground"))
+        
+    }
+
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("Poison"))
         {
-            isGrounded = true;
-        }
-        if (collision.gameObject.CompareTag("InversionGround"))
-        {
-            isGrounded = true;
+            rb.MovePosition(startPosition);
         }
     }
 
@@ -97,28 +96,11 @@ public class PlayerMove : MonoBehaviour
         float mouseX = Input.GetAxis("Mouse X") * RotationSpeed;
         float mouseY = Input.GetAxis("Mouse Y") * CameraRotationSpeed;
         transform.Rotate(0f, mouseX * Time.deltaTime, 0f);
-
-
         cameraRotationX -= mouseY * Time.deltaTime;
         cameraRotationX = Mathf.Clamp(cameraRotationX, -60f, 60f);
         Camera.localRotation = Quaternion.Euler(cameraRotationX, 0f, 0f);
 
-        /*
-        float rotationY = 0f;
-
-        if (Input.GetKey(KeyCode.LeftArrow)) rotationY -= RotationSpeed;
-        if (Input.GetKey(KeyCode.RightArrow)) rotationY += RotationSpeed;
-
-        if (Input.GetKey(KeyCode.UpArrow))
-            cameraRotationX -= CameraRotationSpeed * Time.deltaTime;
-
-        if (Input.GetKey(KeyCode.DownArrow))
-            cameraRotationX += CameraRotationSpeed * Time.deltaTime;
-
-        cameraRotationX = Mathf.Clamp(cameraRotationX, -60f, 60f);
-
-        transform.Rotate(0f, rotationY * Time.deltaTime, 0f);
-        */
+  
     }
 
     // ===== カメラ追従 =====
@@ -133,7 +115,7 @@ public class PlayerMove : MonoBehaviour
     }
 
     // ===== ジャンプ =====
-    void Jump()
+    /*void Jump()
     {
         if(Input.GetKeyDown(KeyCode.Space) && isGrounded)
         {
@@ -142,5 +124,5 @@ public class PlayerMove : MonoBehaviour
             //Debug.Log("ジャンプ");
             isGrounded = false;
         }
-    }
+    }*/
 }

@@ -569,6 +569,12 @@ GameObject:
   - component: {fileID: 157100453}
   - component: {fileID: 157100452}
   - component: {fileID: 157100451}
+  - component: {fileID: 157100463}
+  - component: {fileID: 157100462}
+  - component: {fileID: 157100461}
+  - component: {fileID: 157100460}
+  - component: {fileID: 157100459}
+  - component: {fileID: 157100458}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -734,6 +740,83 @@ Transform:
   - {fileID: 1282932894}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &157100458
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 157100450}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f227e2cf92ed2b444ae90c930fe0771e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &157100459
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 157100450}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53eb702d5d29b5548bbad32436ab1539, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &157100460
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 157100450}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87c195cb07860cc4393c96ed256162c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &157100461
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 157100450}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ad0a013a3d8446458ebb0aefc84c6b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &157100462
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 157100450}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd88fc764baab9942b0d23b46a4bd8f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &157100463
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 157100450}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9cf21612d60a8344f847ee3e17afd00b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TyoukakuAbility: {fileID: 157100458}
+  MikakuAbility: {fileID: 157100459}
+  SyokkakuAbility: {fileID: 157100460}
+  KyuukakuAbility: {fileID: 157100462}
+  ShikakuAbility: {fileID: 157100461}
 --- !u!1001 &238028694
 PrefabInstance:
   m_ObjectHideFlags: 0

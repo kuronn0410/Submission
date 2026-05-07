@@ -11,6 +11,6 @@ public class Tyoukaku : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        AudioListener.volume = 0f;
     }
 }

@@ -11,11 +11,11 @@ public class AbilityManager : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        TyoukakuAbility.enabled = false;
+        TyoukakuAbility.enabled = true;
         MikakuAbility.enabled = false;
         SyokkakuAbility.enabled = false;
         KyuukakuAbility.enabled = false;
-        ShikakuAbility.enabled = false;
+        ShikakuAbility.enabled = true;
     }
 
     // Update is called once per frame
@@ -26,10 +26,11 @@ public class AbilityManager : MonoBehaviour
 
     void PossessionAbility()
     {
-        if (TransitionHistory.Tyoukaku && !TyoukakuAbility.enabled)
+        if (TransitionHistory.Tyoukaku && TyoukakuAbility.enabled)
         {
-            TyoukakuAbility.enabled = true;
+            TyoukakuAbility.enabled = false;
             Debug.Log("Tyoukaku”\—ÍŽæ“¾");
+            AudioListener.volume = 1f;
         }
         if (TransitionHistory.Mikaku && !MikakuAbility.enabled)
         {
@@ -46,9 +47,9 @@ public class AbilityManager : MonoBehaviour
             KyuukakuAbility.enabled = true;
             Debug.Log("Kyuukaku”\—ÍŽæ“¾");
         }
-        if (TransitionHistory.Shikaku && !ShikakuAbility.enabled)
+        if (TransitionHistory.Shikaku && ShikakuAbility.enabled)
         {
-            ShikakuAbility.enabled = true;
+            ShikakuAbility.enabled = false;
             Debug.Log("Shikaku”\—ÍŽæ“¾");
         }
     }
