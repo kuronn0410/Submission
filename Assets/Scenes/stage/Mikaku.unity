@@ -727,7 +727,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &126503907
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3963,6 +3963,63 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1660948250}
   m_CullTransparentMesh: 1
+--- !u!1001 &1684092334
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 100c20ac28804ce43837857266224f06, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 26.449408
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 100c20ac28804ce43837857266224f06, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.0612483
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 100c20ac28804ce43837857266224f06, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 53.128975
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 100c20ac28804ce43837857266224f06, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 100c20ac28804ce43837857266224f06, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 100c20ac28804ce43837857266224f06, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 100c20ac28804ce43837857266224f06, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 100c20ac28804ce43837857266224f06, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 100c20ac28804ce43837857266224f06, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 100c20ac28804ce43837857266224f06, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 100c20ac28804ce43837857266224f06, type: 3}
+      propertyPath: m_Name
+      value: "\u5263"
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 100c20ac28804ce43837857266224f06, type: 3}
 --- !u!1 &1691559259
 GameObject:
   m_ObjectHideFlags: 0
@@ -4099,6 +4156,12 @@ GameObject:
   - component: {fileID: 1750856924}
   - component: {fileID: 1750856923}
   - component: {fileID: 1750856922}
+  - component: {fileID: 1750856934}
+  - component: {fileID: 1750856933}
+  - component: {fileID: 1750856932}
+  - component: {fileID: 1750856931}
+  - component: {fileID: 1750856930}
+  - component: {fileID: 1750856929}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -4141,7 +4204,6 @@ MonoBehaviour:
   PlayerSpeed: 9.03
   RotationSpeed: 40
   CameraRotationSpeed: 40
-  jumpForce: 5
   gravityChange: 1
   gravityScale: 9.81
 --- !u!54 &1750856924
@@ -4264,6 +4326,89 @@ Transform:
   - {fileID: 126503907}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1750856929
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1750856921}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87c195cb07860cc4393c96ed256162c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  jumpForce: 5
+--- !u!114 &1750856930
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1750856921}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f227e2cf92ed2b444ae90c930fe0771e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1750856931
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1750856921}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ad0a013a3d8446458ebb0aefc84c6b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BlindnessPanel: {fileID: 0}
+--- !u!114 &1750856932
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1750856921}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53eb702d5d29b5548bbad32436ab1539, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MikakuPanel: {fileID: 809540623}
+  FoodPanel_1: {fileID: 1576148312}
+  FoodPanel_2: {fileID: 1015985936}
+--- !u!114 &1750856933
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1750856921}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd88fc764baab9942b0d23b46a4bd8f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  poisonDuration: 5
+--- !u!114 &1750856934
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1750856921}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9cf21612d60a8344f847ee3e17afd00b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TyoukakuAbility: {fileID: 1750856930}
+  MikakuAbility: {fileID: 1750856932}
+  SyokkakuAbility: {fileID: 1750856929}
+  KyuukakuAbility: {fileID: 1750856933}
+  ShikakuAbility: {fileID: 1750856931}
 --- !u!1 &1843736999
 GameObject:
   m_ObjectHideFlags: 0
@@ -5311,3 +5456,4 @@ SceneRoots:
   - {fileID: 1750856928}
   - {fileID: 1601586487}
   - {fileID: 1246128925}
+  - {fileID: 1684092334}
