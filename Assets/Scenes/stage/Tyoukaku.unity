@@ -575,6 +575,7 @@ GameObject:
   - component: {fileID: 157100460}
   - component: {fileID: 157100459}
   - component: {fileID: 157100458}
+  - component: {fileID: 157100464}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -617,7 +618,6 @@ MonoBehaviour:
   PlayerSpeed: 9.03
   RotationSpeed: 40
   CameraRotationSpeed: 40
-  jumpForce: 5
   gravityChange: 1
   gravityScale: 9.81
 --- !u!54 &157100453
@@ -776,6 +776,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87c195cb07860cc4393c96ed256162c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  jumpForce: 5
 --- !u!114 &157100461
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -788,6 +789,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ad0a013a3d8446458ebb0aefc84c6b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  BlindnessPanel: {fileID: 0}
 --- !u!114 &157100462
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -800,6 +802,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd88fc764baab9942b0d23b46a4bd8f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  poisonDuration: 5
 --- !u!114 &157100463
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -813,10 +816,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TyoukakuAbility: {fileID: 157100458}
-  MikakuAbility: {fileID: 157100459}
+  MikakuAbility: {fileID: 157100464}
   SyokkakuAbility: {fileID: 157100460}
   KyuukakuAbility: {fileID: 157100462}
   ShikakuAbility: {fileID: 157100461}
+--- !u!114 &157100464
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 157100450}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c22f083c800bcb409064f5e2e02df73, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MikakuPanel: {fileID: 0}
+  FoodPanel_1: {fileID: 0}
+  FoodPanel_2: {fileID: 0}
 --- !u!1001 &238028694
 PrefabInstance:
   m_ObjectHideFlags: 0

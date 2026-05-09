@@ -1364,6 +1364,7 @@ GameObject:
   - component: {fileID: 698303733}
   - component: {fileID: 698303732}
   - component: {fileID: 698303731}
+  - component: {fileID: 698303737}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -1591,6 +1592,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd88fc764baab9942b0d23b46a4bd8f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  poisonDuration: 5
 --- !u!114 &698303736
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1604,10 +1606,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TyoukakuAbility: {fileID: 698303731}
-  MikakuAbility: {fileID: 698303734}
+  MikakuAbility: {fileID: 698303737}
   SyokkakuAbility: {fileID: 698303732}
   KyuukakuAbility: {fileID: 698303735}
   ShikakuAbility: {fileID: 698303733}
+--- !u!114 &698303737
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 698303723}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c22f083c800bcb409064f5e2e02df73, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MikakuPanel: {fileID: 0}
+  FoodPanel_1: {fileID: 0}
+  FoodPanel_2: {fileID: 0}
 --- !u!1 &743739657
 GameObject:
   m_ObjectHideFlags: 0

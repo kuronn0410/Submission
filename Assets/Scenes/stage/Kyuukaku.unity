@@ -3928,6 +3928,7 @@ GameObject:
   - component: {fileID: 1497975086}
   - component: {fileID: 1497975085}
   - component: {fileID: 1497975084}
+  - component: {fileID: 1497975090}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -4105,7 +4106,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TyoukakuAbility: {fileID: 1497975085}
-  MikakuAbility: {fileID: 1497975089}
+  MikakuAbility: {fileID: 1497975090}
   SyokkakuAbility: {fileID: 1497975086}
   KyuukakuAbility: {fileID: 1497975087}
   ShikakuAbility: {fileID: 1497975088}
@@ -4170,6 +4171,21 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 53eb702d5d29b5548bbad32436ab1539, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MikakuPanel: {fileID: 0}
+  FoodPanel_1: {fileID: 0}
+  FoodPanel_2: {fileID: 0}
+--- !u!114 &1497975090
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1497975076}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c22f083c800bcb409064f5e2e02df73, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   MikakuPanel: {fileID: 0}

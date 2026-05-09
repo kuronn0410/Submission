@@ -2336,8 +2336,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dcb1b76e84d594848a758c81dc3f032f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speedUpMultiplier: 1.5
+  speedUpMultiplier: 4
   speedUpDuration: 5
+--- !u!114 &527411832
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 527411806}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c22f083c800bcb409064f5e2e02df73, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MikakuPanel: {fileID: 578096423}
+  FoodPanel_1: {fileID: 1084394413}
+  FoodPanel_2: {fileID: 111039826}
 --- !u!1 &558498505
 GameObject:
   m_ObjectHideFlags: 0
@@ -8166,6 +8181,10 @@ PrefabInstance:
       propertyPath: m_Color.r
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1558037469047789370, guid: 2b1a42edc21d19e41959f4fd00cadeec, type: 3}
+      propertyPath: MikakuAbility
+      value: 
+      objectReference: {fileID: 527411832}
     - target: {fileID: 2368514962032613162, guid: 2b1a42edc21d19e41959f4fd00cadeec, type: 3}
       propertyPath: audioSource
       value: 
@@ -8359,6 +8378,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 8295464899336302566, guid: 2b1a42edc21d19e41959f4fd00cadeec, type: 3}
       insertIndex: -1
       addedObject: {fileID: 527411819}
+    - targetCorrespondingSourceObject: {fileID: 8295464899336302566, guid: 2b1a42edc21d19e41959f4fd00cadeec, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 527411832}
   m_SourcePrefab: {fileID: 100100000, guid: 2b1a42edc21d19e41959f4fd00cadeec, type: 3}
 --- !u!1 &80955846421434191
 GameObject:
