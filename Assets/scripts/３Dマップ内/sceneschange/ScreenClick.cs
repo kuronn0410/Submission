@@ -15,6 +15,7 @@ public class ScreenClick : MonoBehaviour
             {
                 DoorChange door = hit.collider.GetComponent<DoorChange>();
                 DeleteSelf tyoukaku = hit.collider.GetComponent<DeleteSelf>();  
+                LastStageDoor lastdoor = hit.collider.GetComponent<LastStageDoor>();
                 // 2. スクリプトが見つかった場合だけ実行する
                 if (door != null)
                 {
@@ -24,6 +25,10 @@ public class ScreenClick : MonoBehaviour
                 {
                     Debug.Log("敵を攻撃");
                     tyoukaku.DeleteOBJ();
+                }
+                if (lastdoor != null)
+                {
+                    lastdoor.SceneChange();
                 }
             }
         }

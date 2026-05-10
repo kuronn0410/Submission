@@ -13,22 +13,21 @@ public class PlayerMove : MonoBehaviour
     public float RotationSpeed = 120f;
     public float CameraRotationSpeed = 80f;
 
-    /*[Header("ジャンプ")]
-    [SerializeField] float jumpForce = 5f;
-    private bool isGrounded = true;
-    */
+    [Header("ジャンプ")]
+    //[SerializeField] float jumpForce = 5f;
+    public bool isGrounded = true;
+    
 
     [Header("Public")]
     public float gravityChange = 1f;
     [SerializeField] float gravityScale = 9.81f;
 
-    private Rigidbody rb;
+    public Rigidbody rb;
     private Vector3 startPosition;
     private float cameraRotationX = 0f;
 
     void Start()
     {
-        
         startPosition = transform.position;
         rb = GetComponent<Rigidbody>();
         rb.useGravity = false; // カスタム重力を使用するため、Unityの重力は無効にする
@@ -41,8 +40,11 @@ public class PlayerMove : MonoBehaviour
         RotatePlayer();
         CameraFollow();
         //Jump();
+        if (Input.GetKeyDown(KeyCode.LeftShift))
+        {
+            GravityInversion.isActive = false;
+        }
 
-        
     }
 
     void FixedUpdate()
@@ -58,6 +60,15 @@ public class PlayerMove : MonoBehaviour
         if (collision.gameObject.CompareTag("Enemy"))
         {
             rb.MovePosition(startPosition);
+        }
+       
+        if (collision.gameObject.CompareTag("Ground"))
+        {
+                isGrounded = true;
+        }
+        if (collision.gameObject.CompareTag("InversionGround"))
+        {
+                isGrounded = true;
         }
         
     }

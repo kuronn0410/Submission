@@ -30,6 +30,9 @@ EditorBuildSettings:
     path: Assets/Scenes/GameDescription.unity
     guid: ed6733209068ba94fa14d76d7481d84b
   - enabled: 1
+    path: Assets/Scenes/stage/LastStage.unity
+    guid: fbd12be61f2b2504c8941e501296b9e3
+  - enabled: 1
     path: Assets/Scenes/Clear.unity
     guid: a8b64037f474b144d850513e73012b80
   m_configObjects:

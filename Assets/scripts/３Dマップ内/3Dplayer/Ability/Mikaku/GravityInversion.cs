@@ -9,8 +9,7 @@ public class GravityInversion : MonoBehaviour
     {
         isActive = true;
         Debug.Log("èdóÕîΩì]ÅI");
-        this.gameObject.SetActive(false);
-
+        //this.gameObject.SetActive(false);
     }
 
 
