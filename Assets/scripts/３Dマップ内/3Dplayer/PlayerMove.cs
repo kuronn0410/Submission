@@ -16,7 +16,9 @@ public class PlayerMove : MonoBehaviour
     [Header("ƒWƒƒƒ“ƒv")]
     //[SerializeField] float jumpForce = 5f;
     public bool isGrounded = true;
-    
+
+    [Header("Poison")]
+    [SerializeField] AvoidPoisonTimer avoidpoisontimer;
 
     [Header("Public")]
     public float gravityChange = 1f;
@@ -78,6 +80,7 @@ public class PlayerMove : MonoBehaviour
         if (other.gameObject.CompareTag("Poison"))
         {
             rb.MovePosition(startPosition);
+            avoidpoisontimer.ResetTimer();
         }
     }
 
