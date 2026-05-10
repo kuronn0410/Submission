@@ -35,6 +35,7 @@ public class AbilityManager : MonoBehaviour
         if (TransitionHistory.Mikaku && !MikakuAbility.enabled)
         {
             MikakuAbility.enabled = true;
+            MikakuAbility.SetUpMikakuPanel();
             Debug.Log("Mikaku”\—ÍŽæ“¾");
         }
         if (TransitionHistory.Syokkaku && !SyokkakuAbility.enabled)

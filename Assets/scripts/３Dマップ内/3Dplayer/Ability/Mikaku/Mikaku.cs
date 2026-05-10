@@ -9,15 +9,18 @@ public class Mikaku : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        MikakuPanel.SetActive(false);
+    }
+
+    public void SetUpMikakuPanel()
+    {
         if (MikakuPanel != null)
         {
+            Debug.Log("味覚パネル表示");
             MikakuPanel.SetActive(true);
             FoodPanel_1.color = Color.white;
             FoodPanel_2.color = Color.white;
-
-
         }
-
     }
 
     // Update is called once per frame

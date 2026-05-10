@@ -6,6 +6,13 @@ public class Timer : MonoBehaviour
 {
     public static float timer = 0;
     public static bool isRunning = true;
+
+    void Awake()
+    {
+        // シーンを跨いでもタイマーを破壊したくない場合など
+        DontDestroyOnLoad(gameObject);
+    }
+
     // Start is called before the first frame update
     void Start()
     {
