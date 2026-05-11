@@ -4,6 +4,8 @@ using UnityEngine.SceneManagement;
 public class LastStageDoor : MonoBehaviour
 {
     [SerializeField] string sceneName; 
+
+    public static float ClearTime;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -32,6 +34,7 @@ public class LastStageDoor : MonoBehaviour
     {
         if (sceneName != null)
         {
+            ClearTime = Timer.timer;
             SceneManager.LoadScene(sceneName);
         }
     }

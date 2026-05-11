@@ -19,5 +19,14 @@ public class SpeedUP : MonoBehaviour
               playerMove.PlayerSpeed *= speedUpMultiplier; // スピードアップの倍率を調整
               Invoke("ResetSpeed", speedUpDuration); // 指定した持続時間後にスピードを元に戻す 
           }
-    }   
+    } 
+    
+    void ResetSpeed()
+    {
+        PlayerMove playerMove = GetComponent<PlayerMove>();
+        if (playerMove != null)
+        {
+            playerMove.PlayerSpeed /= speedUpMultiplier; // スピードを元に戻す
+        }
+    }
 }
