@@ -6,9 +6,17 @@ public class Timer : MonoBehaviour
 {
     public static float timer = 0;
     public static bool isRunning = true;
+    private static Timer instance;
 
     void Awake()
     {
+        if (instance != null && instance != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
+
+        instance = this;
         // シーンを跨いでもタイマーを破壊したくない場合など
         DontDestroyOnLoad(gameObject);
     }
@@ -27,5 +35,10 @@ public class Timer : MonoBehaviour
         {
             timer += Time.deltaTime;
         }
+    }
+
+    public static void ResetTimer()
+    {
+        timer = 0;
     }
 }
