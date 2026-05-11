@@ -27,7 +27,6 @@ public class StageDescription : MonoBehaviour
                 stagerulePanel.SetActive(false);
                 return;
             case AbilityType.other:
-
                 ShowStageRulePanel();
                 return;
         }
@@ -36,7 +35,7 @@ public class StageDescription : MonoBehaviour
 
     public void ShowStageRulePanel()
     {
-        CursorTrue();
+        SetCursorManager.SetCursorState(true);
         stagerulePanel.SetActive(true);
         Time.timeScale = 0f;
     }
@@ -50,12 +49,7 @@ public class StageDescription : MonoBehaviour
     {
         stagerulePanel.SetActive(false);
         Time.timeScale = 1f;
-    }
-
-    void CursorTrue()
-    {
-        Cursor.visible = true;
-        Cursor.lockState = CursorLockMode.None;
+        SetCursorManager.SetCursorState(false);
     }
 
 

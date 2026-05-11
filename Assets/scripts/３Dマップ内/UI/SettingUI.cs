@@ -6,12 +6,16 @@ public class SettingUI : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-       CloseSettingPanel();
+        settingPanel.SetActive(false);
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (Time.timeScale == 0f)
+        {
+            return;
+        }
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             ToggleSettingPanel();
@@ -38,15 +42,17 @@ public class SettingUI : MonoBehaviour
     void CloseSettingPanel()
     {
         settingPanel.SetActive(false);
-        Cursor.visible = false; // ポインターを隠す
-        Cursor.lockState = CursorLockMode.Locked; // 中央固定
+        //Cursor.visible = false; // ポインターを隠す
+        //Cursor.lockState = CursorLockMode.Locked; // 中央固定
+        SetCursorManager.SetCursorState(false);
     }
 
    void OpenSettingPanel()
     {
         settingPanel.SetActive(true);
-        Cursor.visible = true; // ポインターを表示
-        Cursor.lockState = CursorLockMode.None; // ポインターのロックを解除
+        //Cursor.visible = true; // ポインターを表示
+        //Cursor.lockState = CursorLockMode.None; // ポインターのロックを解除
+        SetCursorManager.SetCursorState(true);
     }
 
 
